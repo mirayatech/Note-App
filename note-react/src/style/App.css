@@ -16,13 +16,12 @@
 }
 
 button {
-  color: #08c;
   border: none;
+  color: #08c;
   cursor: pointer;
-  font-size: calc(18 / 16 * 1rem);
-  /* font-size: calc(16 / 16 * 1rem); */
   background: none;
   transition: all 0.3s ease;
+  font-size: calc(16 / 16 * 1rem);
 }
 
 button:hover {
@@ -56,13 +55,13 @@ button:hover {
   width: 5px;
 }
 .app-sidebar-notes::-webkit-scrollbar-track {
-  background: #f1f1f1;
   border-radius: 25px;
+  background: #f1f1f1;
 }
 
 .app-sidebar-notes::-webkit-scrollbar-thumb {
-  background: #e6e6e6;
   border-radius: 25px;
+  background: #e6e6e6;
 }
 
 .app-sidebar-note {
@@ -75,15 +74,15 @@ button:hover {
   justify-content: space-between;
 }
 .app-sidebar-note button {
-  font-size: calc(15 / 16 * 1rem);
   color: crimson;
+  font-size: calc(15 / 16 * 1rem);
 }
 .app-sidebar-note p {
   margin: 10px 0;
 }
 .app-sidebar-note small {
-  display: block;
   color: #999;
+  display: block;
 }
 
 .app-sidebar-note:hover {
@@ -92,6 +91,81 @@ button:hover {
 
 .app-sidebar-note.active,
 .app-sidebar-note.active small {
-  background: #08c;
   color: white;
+  background: #08c;
+}
+
+/* NOTE EDITOR/PREVIEW (MAIN) STYLES */
+
+.app-main {
+  width: 70%;
+  height: 100vh;
+}
+.app-main-note-edit,
+.app-main-note-preview {
+  height: 50vh;
+}
+
+.no-active-note {
+  width: 70%;
+  color: #999;
+  height: 100vh;
+  font-size: 2rem;
+  text-align: center;
+  line-height: 100vh;
+}
+
+/* Editing */
+.app-main-note-edit {
+  padding: 25px;
+}
+
+.app-main-note-edit input,
+textarea {
+  width: 100%;
+  resize: none;
+  padding: 10px;
+  outline: none;
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  font-family: inherit;
+  height: calc(50vh - 130px);
+  border: 1px solid #e6e6e6;
+}
+
+.app-main-note-edit input {
+  height: 50px;
+  font-size: 1.5rem;
+}
+
+/* Preview */
+.app-main-note-preview {
+  overflow-y: scroll;
+  background: #00000005;
+  border-top: 1px solid #e6e6e6;
+}
+
+.app-main-note-preview::-webkit-scrollbar {
+  width: 5px;
+}
+.app-main-note-preview::-webkit-scrollbar-track {
+  border-radius: 25px;
+  background: #f1f1f1;
+}
+
+.app-main-note-preview::-webkit-scrollbar-thumb {
+  border-radius: 25px;
+  background: #e6e6e6;
+}
+
+.preview-title {
+  margin: 0;
+  padding: 25px 25px 0 25px;
+}
+
+.markdown-preview {
+  font-size: 1rem;
+  line-height: 2rem;
+  padding: 0 25px 25px 25px;
 }
