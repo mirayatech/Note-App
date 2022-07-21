@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import uuid from "react-uuid";
 import "./style/App.css";
 import Sidebar from "./components/Sidebar";
 import Main from "./components/Main";
 
 function App() {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState(
+    localStorage.notes ? JSON.parse(localStorage.notes) : []
+  );
   const [activeNote, setActiveNote] = useState(false);
 
-  // Notes
+  useEffect(() => {
+    localStorage.setItem("notes", JSON.stringify(notes));
+  }, [notes]);
+
   const onAddNote = () => {
     const newNote = {
       id: uuid(),
@@ -18,18 +23,27 @@ function App() {
     };
 
     setNotes([newNote, ...notes]);
+    setActiveNote(newNote.id);
+  };
+
+  const onDeleteNote = (noteId) => {
+    setNotes(notes.filter(({ id }) => id !== noteId));
+  };
+
+  const onUpdateNote = (updatedNote) => {
+    const updatedNotesArr = notes.map((note) => {
+      if (note.id === updatedNote.id) {
+        return updatedNote;
+      }
+
+      return note;
+    });
+
+    setNotes(updatedNotesArr);
   };
 
   const getActiveNote = () => {
-    return notes.find((note) => note.id === activeNote);
-  };
-
-  const onDeleteNote = (idToDelete) => {
-    /* For each note, we're lokking at the note id,and if is not equal to 
-   "idToDelete" then is going to stay in the array (true), otherwise is 
-   going to get delete (false)
-   */
-    setNotes(notes.filter((note) => note.id !== idToDelete));
+    return notes.find(({ id }) => id === activeNote);
   };
 
   return (
@@ -41,7 +55,7 @@ function App() {
         activeNote={activeNote}
         setActiveNote={setActiveNote}
       />
-      <Main activeNote={getActiveNote} setActiveNote={setActiveNote} />
+      <Main activeNote={getActiveNote()} onUpdateNote={onUpdateNote} />
     </div>
   );
 }
