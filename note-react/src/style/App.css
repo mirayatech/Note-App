@@ -31,7 +31,7 @@ button:hover {
 /* SIDEBAR STYLES */
 
 .app-sidebar {
-  width: 30%;
+  width: 260px;
   height: 100vh;
   border-right: 1px solid #e6e6e6;
 }
@@ -67,6 +67,7 @@ button:hover {
 .app-sidebar-note {
   padding: 25px;
   cursor: pointer;
+  word-break: break-all;
   transition: all 0.3s ease;
 }
 .sidebar-note-title {
@@ -160,6 +161,8 @@ textarea {
 
 .preview-title {
   margin: 0;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
   padding: 25px 25px 0 25px;
 }
 
@@ -167,4 +170,84 @@ textarea {
   font-size: 1rem;
   line-height: 2rem;
   padding: 0 25px 25px 25px;
+}
+
+.note-meta {
+  font-size: calc(13 / 16 * 1rem);
+}
+/* MEDIA QUERY */
+
+@media screen and (max-width: 710px) {
+  .app-sidebar {
+    width: 260px;
+  }
+
+  .app-sidebar-header h1 {
+    font-size: calc(20 / 16 * 1rem);
+  }
+
+  .app-sidebar-note {
+    text-align: left;
+    padding: 25px 20px;
+  }
+
+  /* Editing */
+  .app-main-note-edit {
+    padding: 15px;
+  }
+
+  .app-main-note-edit input,
+  textarea {
+    margin-bottom: 20px;
+  }
+
+  .app-main-note-edit input {
+    height: 40px;
+    font-size: 1.3rem;
+  }
+
+  .preview-title {
+    font-size: 1.3rem;
+  }
+
+  .markdown-preview {
+    font-size: 1rem;
+    line-height: 2rem;
+    padding: 0 25px 25px 25px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .no-active-note {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .app-sidebar-note {
+    padding: 25px;
+  }
+  .sidebar-note-title {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+  .app-sidebar-note button {
+    margin-bottom: 10px;
+    font-size: calc(14 / 16 * 1rem);
+  }
+  .app-sidebar-note p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+  }
+
+  .note-meta {
+    font-size: calc(13 / 16 * 1rem);
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .no-active-note {
+    font-size: 1rem;
+  }
 }
