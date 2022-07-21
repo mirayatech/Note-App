@@ -6,6 +6,7 @@ import Main from "./components/Main";
 
 function App() {
   const [notes, setNotes] = useState([]);
+  const [activeNote, setActiveNote] = useState(false);
 
   // Notes
   const onAddNote = () => {
@@ -17,6 +18,10 @@ function App() {
     };
 
     setNotes([newNote, ...notes]);
+  };
+
+  const getActiveNote = () => {
+    return notes.find((note) => note.id === activeNote);
   };
 
   const onDeleteNote = (idToDelete) => {
@@ -33,8 +38,10 @@ function App() {
         notes={notes}
         onAddNote={onAddNote}
         onDeleteNote={onDeleteNote}
+        activeNote={activeNote}
+        setActiveNote={setActiveNote}
       />
-      <Main />
+      <Main activeNote={getActiveNote} setActiveNote={setActiveNote} />
     </div>
   );
 }

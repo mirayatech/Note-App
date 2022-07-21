@@ -91,8 +91,7 @@ button:hover {
 
 .app-sidebar-note.active,
 .app-sidebar-note.active small {
-  color: white;
-  background: #08c;
+  background: #eeeeee;
 }
 
 /* NOTE EDITOR/PREVIEW (MAIN) STYLES */
