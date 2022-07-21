@@ -5,7 +5,7 @@ An app where you can take notes 📝
 Music app built with pure react.js 🎶
 
 ## About this project 🚀
-The user can select different music from the library. It can play the music, pause the music, or skip back and forth. The user is able to choose other songs (from the library).
+In this note app, users can easily add, edit, or delete their notes. The notes user has added to this app will be stored in the browser’s local storage so, they won’t remove on page refresh or tab close, and it is done with pure React.js. User can use markdown in the note app.
 
 
 ## Technologies 🛠️
