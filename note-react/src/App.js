@@ -19,9 +19,21 @@ function App() {
     setNotes([newNote, ...notes]);
   };
 
+  const onDeleteNote = (idToDelete) => {
+    /* For each note, we're lokking at the note id,and if is not equal to 
+   "idToDelete" then is going to stay in the array (true), otherwise is 
+   going to get delete (false)
+   */
+    setNotes(notes.filter((note) => note.id !== idToDelete));
+  };
+
   return (
     <div className="App">
-      <Sidebar notes={notes} onAddNote={onAddNote} />
+      <Sidebar
+        notes={notes}
+        onAddNote={onAddNote}
+        onDeleteNote={onDeleteNote}
+      />
       <Main />
     </div>
   );

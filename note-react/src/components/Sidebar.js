@@ -1,6 +1,6 @@
 import React from "react";
 
-function Sidebar({ notes, onAddNote }) {
+function Sidebar({ notes, onAddNote, onDeleteNote }) {
   return (
     <div className="app-sidebar">
       <div className="app-sidebar-header">
@@ -13,7 +13,7 @@ function Sidebar({ notes, onAddNote }) {
           <div className="app-sidebar-note ">
             <div className="sidebar-note-title">
               <strong>{note.title}</strong>
-              <button>Delete</button>
+              <button onClick={() => onDeleteNote(note.id)}>Delete</button>
             </div>
 
             <p>{note.body && note.body.substr(0, 100) + "..."}</p>
