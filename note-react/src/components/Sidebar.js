@@ -22,13 +22,13 @@ function Sidebar({
           >
             <div className="sidebar-note-title">
               <strong>{note.title}</strong>
-              <button onClick={() => onDeleteNote(note.id)}>Delete</button>
+              <button onClick={(e) => onDeleteNote(note.id)}>Delete</button>
             </div>
 
             <p>{note.body && note.body.substr(0, 100) + "..."}</p>
             <small className="note-meta">
-              Last modified{" "}
-              {new Date(note.lastModified).toLocaleDateString("eng-GB", {
+              Last Modified{" "}
+              {new Date(note.lastModified).toLocaleDateString("en-GB", {
                 hour: "2-digit",
                 minute: "2-digit",
               })}
