@@ -11,7 +11,7 @@ In this note app, users can easily add, edit, or delete their notes. The notes u
 
 ## How it looks 👀
 
-<strong>Live Demo: </strong> https://react-mitsuki.netlify.app/ <br> <br> 
+<strong>Live Demo: </strong> <br> <br> 
 
 <strong>Video:</strong>
 
