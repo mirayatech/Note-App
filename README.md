@@ -11,8 +11,6 @@ In this note app, users can easily add, edit, or delete their notes. The notes u
 
 ## How it looks 👀
 
-<strong>Live Demo: </strong> <br> <br> 
-
 <strong>Video:</strong>
 
 
